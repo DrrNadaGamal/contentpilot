@@ -95,3 +95,7 @@ Compared with Buffer (~$6/channel/mo), Hootsuite (~$99/mo) and ContentStudio (~$
 - Demo asset images in `public/media/` are generated SVG covers; in a real
   deployment they would be user uploads.
 - `prisma/dev.db` is intentionally git-ignored; run the seed to reproduce the data.
+
+## Hosted demo
+
+Live demo: https://contentpilot-rho.vercel.app (pick a demo user on the sign-in screen; there are no passwords). It runs on seeded demo data. Because the hosting filesystem is read-only, the demo database is copied to temporary storage, so changes you make there reset when the server restarts. Best viewed on a desktop screen; the layout is not yet optimised for phones.
