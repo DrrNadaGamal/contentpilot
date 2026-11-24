@@ -98,4 +98,4 @@ Compared with Buffer (~$6/channel/mo), Hootsuite (~$99/mo) and ContentStudio (~$
 
 ## Hosted demo
 
-Live demo: https://contentpilot-rho.vercel.app (pick a demo user on the sign-in screen; there are no passwords). It runs on seeded demo data. Because the hosting filesystem is read-only, the demo database is copied to temporary storage, so changes you make there reset when the server restarts. Best viewed on a desktop screen; the layout is not yet optimised for phones.
+Live demo: https://contentpilot-rho.vercel.app (pick a demo user on the sign-in screen; there are no passwords). It runs on seeded demo data. Because the hosting filesystem is read-only, the demo database is copied to temporary storage, so changes you make there reset when the server restarts. The layout is responsive: the sidebar becomes a top bar with scrolling navigation on phones, and the calendar scrolls sideways.

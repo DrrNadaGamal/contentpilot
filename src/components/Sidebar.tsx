@@ -24,33 +24,35 @@ export default function Sidebar({ locale, userName, userRole }: { locale: Locale
   const pathname = usePathname();
   return (
     <aside
-      className="panel"
+      className="panel app-sidebar"
       style={{
         width: 240, margin: 16, marginInlineEnd: 0, padding: 14,
         display: "flex", flexDirection: "column", gap: 4, alignSelf: "flex-start",
         position: "sticky", top: 16, minHeight: "calc(100vh - 32px)",
       }}
     >
-      <div style={{ padding: "6px 10px 16px" }}>
+      <div className="app-brand" style={{ padding: "6px 10px 16px" }}>
         <div style={{ fontSize: 20, fontWeight: 800 }}>
           {t(locale, "appName")}<span style={{ color: "#6366f1" }}>.</span>
         </div>
         <div className="muted" style={{ fontSize: 11, marginTop: 2 }}>{t(locale, "tagline")}</div>
       </div>
+      <nav className="app-nav" aria-label="Main">
       {NAV.map(({ href, key, icon: Icon }) => (
         <Link key={href} href={href} className={`navlink ${pathname === href ? "active" : ""}`}>
           <Icon size={17} />
           {t(locale, key)}
         </Link>
       ))}
-      <div style={{ flex: 1 }} />
-      <form action="/api/locale" method="post" style={{ marginBottom: 6 }}>
+      </nav>
+      <div className="app-spacer" style={{ flex: 1 }} />
+      <form className="app-locale" action="/api/locale" method="post" style={{ marginBottom: 6 }}>
         <input type="hidden" name="locale" value={locale === "ar" ? "en" : "ar"} />
         <button className="btn btn-ghost" style={{ width: "100%", justifyContent: "center" }} type="submit">
           <Languages size={15} /> {locale === "ar" ? "English" : "العربية"}
         </button>
       </form>
-      <div className="panel-2" style={{ padding: 10, display: "flex", alignItems: "center", gap: 10 }}>
+      <div className="panel-2 app-user" style={{ padding: 10, display: "flex", alignItems: "center", gap: 10 }}>
         <div
           style={{
             width: 34, height: 34, borderRadius: "50%", background: "#6366f1",

@@ -67,11 +67,11 @@ export default function CalendarClient({
     <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
       <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
         <button className="btn btn-ghost" onClick={() => router.push(`/calendar?month=${pParam}`)}>←</button>
-        <h2 style={{ margin: 0, fontSize: 18, minWidth: 200, textAlign: "center" }}>{monthName}</h2>
+        <h2 style={{ margin: 0, fontSize: 18, minWidth: 120, flex: 1, textAlign: "center" }}>{monthName}</h2>
         <button className="btn btn-ghost" onClick={() => router.push(`/calendar?month=${nParam}`)}>→</button>
         <button className="btn btn-ghost" onClick={() => router.push("/calendar")}>{labels.today}</button>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gap: 6 }}>
+      <div className="cal-grid" style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gap: 6 }}>
         {weekdayNames.map((w) => (
           <div key={w} className="muted" style={{ fontSize: 12, fontWeight: 700, textAlign: "center" }}>{w}</div>
         ))}

@@ -60,7 +60,7 @@ export default function AnalyticsClient({
         </div>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
+      <div className="stack-mobile" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
         <div className="panel" style={{ padding: 18 }}>
           <h3 style={{ marginTop: 0, fontSize: 15 }}>{labels.byChannel}</h3>
           <div style={{ width: "100%", height: 240 }}>

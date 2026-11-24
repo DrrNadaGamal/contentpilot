@@ -47,7 +47,7 @@ export default function ComposerClient({
   const selMedia = media.find((m) => m.id === mediaId) ?? null;
 
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginTop: 16, alignItems: "start" }}>
+    <div className="stack-mobile" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginTop: 16, alignItems: "start" }}>
       <div className="panel" style={{ padding: 18, display: "flex", flexDirection: "column", gap: 14 }}>
         <div>
           <label className="muted" style={{ fontSize: 12, display: "block", marginBottom: 6 }}>{labels.brand}</label>

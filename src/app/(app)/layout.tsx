@@ -9,9 +9,9 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   if (!user) redirect("/login");
   const locale = await getLocale();
   return (
-    <div style={{ display: "flex", minHeight: "100vh" }}>
+    <div className="app-shell" style={{ display: "flex", minHeight: "100vh" }}>
       <Sidebar locale={locale} userName={user.name} userRole={user.role} />
-      <main style={{ flex: 1, padding: "28px 32px", maxWidth: 1280, margin: "0 auto", width: "100%" }}>
+      <main className="app-main" style={{ flex: 1, padding: "28px 32px", maxWidth: 1280, margin: "0 auto", width: "100%" }}>
         {children}
         <p className="muted" style={{ marginTop: 40, fontSize: 12, textAlign: "center" }}>
           {t(locale, "footer_demo")}

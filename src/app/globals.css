@@ -79,3 +79,50 @@ html, body {
   background: var(--panel-2); border-inline-start: 3px solid var(--accent);
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
+
+/* Responsive layout (phones and small tablets) */
+.app-main { min-width: 0; }
+img, svg, canvas { max-width: 100%; }
+.app-nav { display: flex; flex-direction: column; gap: 4px; }
+
+@media (max-width: 860px) {
+  .app-shell { flex-direction: column !important; }
+  .app-sidebar {
+    width: auto !important; margin: 10px 10px 0 !important; padding: 10px !important;
+    position: static !important; min-height: 0 !important; align-self: stretch !important;
+    flex-direction: row !important; flex-wrap: wrap; align-items: center; gap: 8px !important;
+  }
+  .app-brand { padding: 2px 6px !important; flex: 1 1 0; min-width: 0; white-space: nowrap; }
+  .app-brand > div:last-child { display: none; }
+  .app-spacer { display: none; }
+  .app-locale { margin: 0 !important; }
+  .app-user { padding: 6px !important; }
+  .app-user > div:nth-child(2) { display: none; }
+  .app-nav {
+    order: 5; flex: 1 0 100%; flex-direction: row; overflow-x: auto; gap: 4px;
+    padding-bottom: 4px; scrollbar-width: thin;
+  }
+  .navlink { white-space: nowrap; flex: 0 0 auto; padding: 8px 10px; }
+  .app-main { padding: 16px 12px !important; }
+  .stack-mobile { grid-template-columns: 1fr !important; }
+  .cal-grid { overflow-x: auto; grid-template-columns: repeat(7, minmax(92px, 1fr)) !important; }
+  .cal-day { min-height: 96px; }
+}
+
+@media (max-width: 480px) {
+  h1 { font-size: 22px !important; }
+  .input, .textarea, .select { font-size: 16px; }
+}
+
+@media (max-width: 400px) {
+  .app-brand > div:first-child { font-size: 16px !important; }
+  .app-locale .btn { padding: 6px 8px; font-size: 12px; }
+  .app-user form .btn { padding: 4px !important; }
+}
+
+@media (max-width: 360px) {
+  .app-locale .btn svg { display: none; }
+  .app-brand { padding: 2px 2px !important; }
+  .app-brand > div:first-child { font-size: 15px !important; }
+  .app-sidebar { gap: 6px !important; }
+}
